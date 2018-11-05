@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="description" content="This website is part of a freecodecamp responsive design certification. It will be a technical documentation page for my digital vcard website.">
+  <meta name="author" content="Alex Disdier">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="images/default-favicon.png" />
+
+  <title>Palindrome Checker</title>
+  <link rel="stylesheet" href="styles/normalize.min.css" />
+  <link rel="stylesheet" href="styles/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles/main.min.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Palindrome Checker</h1>
+
+    <div id="app">
+      <form>
+        <label for="js-palindrome-value">Type a word</label>
+        <input class="bttn" type="text" placeholder="eye" name="palindrome-checker" id="js-palindrome-value">
+        <a href="#0" class="bttn" onclick="palindrome(document.getElementById('js-palindrome-value').value)">Submit</a>
+      </form>
+
+      <div id="result">
+
+      </div>
+    </div>
+
+  </div>
+  <script src="scripts/main.min.js"></script>
+
+</body>
+
+</html>
