@@ -39,6 +39,26 @@ input {
   margin-bottom: 24px;
 }
 
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  opacity: 0.4;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 0.4;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  opacity: 0.4;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  opacity: 0.4;
+}
+
 a.bttn {
   color: #222;
   text-decoration: none;
