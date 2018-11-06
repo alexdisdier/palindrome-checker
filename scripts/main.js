@@ -3,9 +3,6 @@
 /* main.js */
 
 /* Palindrome Checker */
-
-/* This is part of the JavaScript Algorithms and Data Structures Projects from FreeCodeCamp */
-// This is my solution for now.
 function palindrome(str) {
   str = str.replace(/[\W_]/g, '');
   str = str.toLowerCase();
