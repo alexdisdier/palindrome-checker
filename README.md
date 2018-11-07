@@ -55,7 +55,6 @@ See a live version - https://alexdisdier.github.io/palindrome-checker/
 ## Directory Structure
 
 ```bash
--------------------------------------------
 
 ├── build
 │   ├── images
@@ -71,6 +70,7 @@ See a live version - https://alexdisdier.github.io/palindrome-checker/
 │   │   ├── main.min.css
 │   │   ├── normalize.css
 │   │   ├── normalize.min.css
+│   ├── .gitattributes   ##Forces the web app language to js
 └── ├── index.html
     └──  README.md
 ```
@@ -84,10 +84,6 @@ See a live version - https://alexdisdier.github.io/palindrome-checker/
 ## Authors
 
 **Alex Disdier** - *Initial work* - [alexdisdier](https://github.com/alexdisdier)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
