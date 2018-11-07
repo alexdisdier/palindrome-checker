@@ -25,7 +25,8 @@ function palindrome(str) {
   }
 
   return document.getElementById("result").innerHTML = resultTxt;
-} // palindrome("eye");
+} // Testing Unit
+// palindrome("eye");
 // returns True.
 // palindrome("e y e");
 // returns True.
