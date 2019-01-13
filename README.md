@@ -6,47 +6,55 @@ A [palindrome](https://en.wikipedia.org/wiki/Palindrome) is a word, phrase, or s
 
 My program will ignore any punctuation, case, and spacing.
 
-## Code Explanation
-I created a function named palindrome that takes one argument str.
-```javascript
-function palindrome(str) {};
-```
-Within that function, I start by using *regular expressions (regex)* to replace any white space or non-alphanumeric characters with nothing (or null), which essentially removes them from the string.
-```javascript
-str = str.replace(/[\W_]/g, '');
-```
-I used *String.prototype.toLowerCase()* to remove any capital letters because A is a different character than a.
-```javascript
-str = str.toLowerCase();
-```
-I then ran a for loop to check if the characters starting for the beginning match the characters starting from the end until we reach the middle of the string.
-```javascript
-var j     = 1;
-var len   = str.length;
-var count = 0;
-var resultTxt;
+I used ECMAScript 6 JS.
+For main.js source file, navigate to ./src/main.js  
 
-for (var i = 0; i < len ; i ++){
-  if (str[i] == str[len - j]) {
-    j ++;
-    count ++;
-  }
-}
-```
-Finally we return the result to the web app
+## Code Explanation
+I created a function called 'palindrome' that takes one string argument.
 ```javascript
-if (len == count){
-  resultTxt = "This is a palindrome word";
-}else {
-  resultTxt = "Sorry, this is not a palindrome word";
-}
-return document.getElementById("result").innerHTML = resultTxt;
+const palindrome = str => {};
+```
+I then create several constants
+```javascript
+// the element where the output will be display on my html page
+const result = document.getElementById("result"); 
+
+// The string which will be display if it is a palindrome
+const isPalindrome = "This is a palidrome";
+
+// The string which will be display if it is not a palindrome
+const notPalindrome = "This is not a palindrome";
+
+```
+Then, I used *regular expressions (regex)* to replace any white space or non-alphanumeric characters with nothing (or null), which essentially removes them from the string. I store that regex within a constant
+```javascript
+const regex = /[\W_]/g;
+```
+I used *String.prototype.toLowerCase()* to remove any capital letters because A is a different character than a. Then I used *String.prototype.replace()* replace all present regex by an empty string and I split my string into an array using *String.prototype.split(). 
+```javascript
+const arr = str.toLowerCase().replace(regex, '').split('');
+```
+I then created a copy of the array using *Array.prototype.slice()* and stored within a variable. 
+```javascript
+const arrReverse = arr.slice();
+```
+Finally I transform my array back into a string and I compare the current string with the reverse array using a mix of *Array.prototype.join()* and *Array.prototype.reverse()* which will return a boolean. If true, I display isPalindrome, otherwise notPalindrome. 
+```javascript
+if (arr.join('') === arrReverse.reverse().join('')) {
+    return result.innerHTML = isPalindrome;
+  }
+  return result.innerHTML = notPalindrome;
 ```
 
 **Relevant Links**
-1. [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+1. [regex](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
 2. [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-3. [regex](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+3. [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+4. [String.prototype.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+5. [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+6. [Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+7. [Array.prototype.reverse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+
 
 ## Usage example
 
@@ -56,7 +64,9 @@ See a live version - https://alexdisdier.github.io/palindrome-checker/
 
 ```bash
 
-├── build
+├── Palindrome
+│   ├── src
+│   │   ├── main.js
 │   ├── images
 │   ├── scripts
 │   │   ├── main.js
